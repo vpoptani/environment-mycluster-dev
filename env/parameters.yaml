@@ -1,0 +1,10 @@
+adminUser:
+  password: local:mycluster/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: vishalpoptani02@gmail.com
+  token: local:mycluster/pipelineUser:token
+  username: vpoptani
+prow:
+  hmacToken: local:mycluster/prow:hmacToken
