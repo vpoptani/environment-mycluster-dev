@@ -5,3 +5,9 @@ dependencies:
   url: https://github.com/vpoptani/jenkinsx-tutorial.git
   version: ""
   versionURL: ""
+- host: github.com
+  owner: vpoptani
+  repo: hls2
+  url: https://github.com/vpoptani/hls2.git
+  version: ""
+  versionURL: ""
