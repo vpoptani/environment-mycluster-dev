@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: vpoptani
+    provider: github
+    repository: jenkinsx-tutorial
+  name: vpoptani-jenkinsx-tutorial
+spec:
+  description: Imported application for vpoptani/jenkinsx-tutorial
+  httpCloneURL: https://github.com/vpoptani/jenkinsx-tutorial.git
+  org: vpoptani
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jenkinsx-tutorial
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/vpoptani/jenkinsx-tutorial
