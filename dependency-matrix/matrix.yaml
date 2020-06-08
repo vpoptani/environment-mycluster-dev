@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: vpoptani
+  repo: jenkinsx-tutorial
+  url: https://github.com/vpoptani/jenkinsx-tutorial.git
+  version: ""
+  versionURL: ""
