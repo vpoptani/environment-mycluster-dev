@@ -1,0 +1,23 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  annotations:
+    jenkins.io/last-build-number-for-master: "1"
+  creationTimestamp: null
+  labels:
+    owner: vpoptani
+    provider: github
+    repository: hls2
+  name: vpoptani-hls2
+spec:
+  description: Imported application for vpoptani/hls2
+  httpCloneURL: https://github.com/vpoptani/hls2.git
+  org: vpoptani
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: hls2
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/vpoptani/hls2.git
