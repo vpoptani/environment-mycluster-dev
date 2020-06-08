@@ -1,0 +1,253 @@
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-credential-initializer-4gnbn[0m
+{"level":"info","ts":1591614315.3348608,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591614315.3351965,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-h5nrf[0m
+{"level":"info","ts":1591614316.286966,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1591614316.2880874,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-git-source-vpoptani-environment-mycluster-85h58-2f26f[0m
+{"level":"info","ts":1591614329.3464327,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/refs/heads/0.8.0-ns-support: no such file or directory"}
+{"level":"info","ts":1591614330.9506755,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/********/environment-mycluster-dev.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:18550c569abe1d8ea2148716636d1e47a66efcf1
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+** boot has only been validated on GKE and EKS, we'd love feedback and contributions for other Kubernetes providers
+Running in Batch Mode, execution will continue
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- ********
+reviewers:
+- ********
+The provided requirements file has 'strictPermissions' enabled but 'provider' is not Openshift.
+This feature is only supported on Openshift
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Installing kubectl
+Downloading https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bin/linux/amd64/kubectl to /builder/home/.**/bin/kubectl...
+Downloaded /builder/home/.**/bin/kubectl
+Installing helm
+Downloading https://get.helm.sh/helm-v2.12.2-linux-amd64.tar.gz to /builder/home/.**/bin/helm.tgz...
+Downloaded /builder/home/.**/bin/helm.tgz
+Installing helm secrets plugin
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.482
+using version 2.1.56 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.1.56
+Kubernetes cluster v1.16.10
+kubectl            v1.13.2
+helm client        2.12.2
+git                2.21.1
+
+Verifying Storage...
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+cleaning the lock configmap **-lock-velero
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-velero
+lock configmap **-lock-velero created
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-367471854/velero-backups/requirements.yaml so not checking for missing versions
+cleaning the lock configmap **-lock-velero
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-kube-system
+lock configmap **-lock-kube-system created
+
+cleaning the lock configmap **-lock-kube-system
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-cert-manager
+lock configmap **-lock-cert-manager created
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+cleaning the lock configmap **-lock-cert-manager
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-966828280/acme/requirements.yaml so not checking for missing versions
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name mycluster found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ******** [Automatically accepted existing value]
+Pipeline bot Git email address vishalpoptani02@gmail.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure non default Docker Registry? false [Automatically accepted existing value]
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-create-jx-auth-config[0m
+Saved the rendered configuration into templates/**-auth-configmap.yaml file
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-jx-auth-config[0m
+Modified file /workspace/source/systems/**-auth/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/**-auth-configmap.yaml
+No requirements file: /tmp/**-helm-apply-145081305/**-auth/requirements.yaml so not checking for missing versions
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/kubernetes/values.tmpl.yaml
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/********/environment-mycluster-dev.git
+Validating git repository for production environment at URL https://github.com/********/environment-mycluster-production.git
+Using Git provider github at https://github.com
+? Using Git user name: ********
+? Using organisation: ********
+Creating repository ********/environment-mycluster-production
+Git repository ********/environment-mycluster-production already exists
+Pushed Git repository to https://github.com/********/environment-mycluster-production
+
+Validating git repository for staging environment at URL https://github.com/********/environment-mycluster-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: ********
+? Using organisation: ********
+Creating repository ********/environment-mycluster-staging
+Git repository ********/environment-mycluster-staging already exists
+Pushed Git repository to https://github.com/********/environment-mycluster-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 1
+creating the lock configmap **-lock-**
+lock configmap **-lock-** created
+Ignoring templates/default-group.yaml
+Ignoring templates/********-jenkinsx-tutorial-sr.yaml
+No requirements file: /tmp/**-helm-apply-928023925/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+cleaning the lock configmap **-lock-**
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.52.188.108.63.nip.io
+Updating webhooks for Owner: ******** and Repository: environment-mycluster-dev in git server: https://github.com
+Checking hooks for repository ********/environment-mycluster-dev with user ********
+Found matching hook for url http://hook-**.52.188.108.63.nip.io/hook
+Updating GitHub webhook for ********/environment-mycluster-dev for url http://hook-**.52.188.108.63.nip.io/hook
+Updating webhooks for Owner: ******** and Repository: environment-mycluster-production in git server: https://github.com
+Checking hooks for repository ********/environment-mycluster-production with user ********
+Found matching hook for url http://hook-**.52.188.108.63.nip.io/hook
+Updating GitHub webhook for ********/environment-mycluster-production for url http://hook-**.52.188.108.63.nip.io/hook
+Updating webhooks for Owner: ******** and Repository: environment-mycluster-staging in git server: https://github.com
+Checking hooks for repository ********/environment-mycluster-staging with user ********
+Found matching hook for url http://hook-**.52.188.108.63.nip.io/hook
+Updating GitHub webhook for ********/environment-mycluster-staging for url http://hook-**.52.188.108.63.nip.io/hook
+Updating webhooks for Owner: ******** and Repository: jenkinsx-tutorial in git server: https://github.com
+Checking hooks for repository ********/jenkinsx-tutorial with user ********
+Found matching hook for url http://hook-**.52.188.108.63.nip.io/hook
+Updating GitHub webhook for ********/jenkinsx-tutorial for url http://hook-**.52.188.108.63.nip.io/hook
+
+Showing logs for build [32mvpoptani-environment-mycluster-85h58-1[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                          STATUS
+crier-5ff87ff67c-fjwtq                       Running
+deck-f6b96889f-bp89f                         Running
+deck-f6b96889f-lhpcj                         Running
+hook-9c7dc779c-bd6lg                         Running
+hook-9c7dc779c-g57c6                         Running
+horologium-7b4f7f6bd-gx5r7                   Running
+jenkins-x-chartmuseum-774f8b95b-vjn2c        Running
+jenkins-x-controllerbuild-76bbd54bf7-l5t8j   Running
+jenkins-x-controllerrole-7c68475bdc-skvv9    Running
+jenkins-x-gcactivities-1591610400-87xdk      Succeeded
+jenkins-x-gcactivities-1591612200-4xstt      Succeeded
+jenkins-x-gcactivities-1591614000-24fwq      Succeeded
+jenkins-x-gcpods-1591610400-lfzr2            Succeeded
+jenkins-x-gcpods-1591612200-8896w            Succeeded
+jenkins-x-gcpods-1591614000-2k6ww            Succeeded
+jenkins-x-heapster-679ff46bf4-9248n          Running
+jenkins-x-nexus-555999cf9c-pgrjs             Running
+pipeline-5ddd79ff8f-cshgg                    Running
+pipelinerunner-d48d45f56-6zr6t               Running
+registry-676b6d5d9c-mpnx8                    Running
+tekton-pipelines-controller-5fd865d69b-vjk8l Running
+tide-67c6488f6-nbw4d                         Running
+Verifying the git config
+Verifying username ******** at git server github at https://github.com
+Found 0 organisations in git server https://github.com: 
+Validated pipeline user ******** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
